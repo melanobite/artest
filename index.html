@@ -3,12 +3,22 @@
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <script src="js/aframe.min.js"></script>
+    <script src="js/aframe-ar.js"></script>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
-      <a-marker type="pattern" url="test.patt">
-        <a-box position="0 0.5 0" material="color: red;"></a-box>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
+
+  <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
+    <a-assets>
+      <a-asset-item id="tree" src="data/Lupuroo.gltf"></a-asset-item>
+    </a-assets>
+    <a-marker type="pattern" url="data/test.patt">
+      <a-entity   position="0 0 0" 
+                    rotation="0 0 0"
+                    scale="0.10 0.10 0.10"
+                    gltf-model="#test02" >
+      </a-entity>
+    </a-marker>
+  </a-scene>
   </body>
 </html>
